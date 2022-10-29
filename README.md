@@ -30,6 +30,8 @@
    - Запуск под Android: Node.js + npm, Expo, JDK, Android Studio (а именно, компоненты, которые будут установлены вместе с Android Studio: ADB, Google USB Driver, Android SDK, Android SDK Platform Tools, Android Emulator). Добавить в переменные среды ANDROID_HOME (путь к Android SDK) и в path добавить путь к platform-tools.
  - Отладка на Веб-версии: Node.js + npm, Expo, react-native-web, react-dom, @expo/webpack-config. Библиотеки можно поставить через npm expo install ...
 
+Не забудьте добавить файл firebase-credentials.js, в который нужно поместить константу - объект, содержащий ваши личные параметры подключения. Процесс настройки окружения и подключения к firebase рассматривался на лекции.
+
 ## Настройка репозитория
 Сделайте свою приватную копию репозитория. Как это сделать, описано [тут](https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274) или [тут](https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private). Или можно создать чистый репозиторий самостоятельно и залить код туда. Важно, чтобы он был приватным!
 
