@@ -23,7 +23,7 @@ const ChatScreen = ( { navigation, route }) => {
             alignItems: "center",
           }}>
             <Avatar rounded source={{
-                uri: messages?.at(-1)?.data.photoUrl || deafultPicURL
+                uri: messages[messages.length-1]?.data.photoUrl || deafultPicURL
               }}/>
             <Text style={{ color: "white", marginLeft: 10, fontWeight: "700"}}>{route.params.chatName}</Text>
           </View>),

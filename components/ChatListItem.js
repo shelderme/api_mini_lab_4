@@ -11,7 +11,6 @@ const ChatListItem = ({ id, chatName, enterChat }) => {
   const [lastMessage, setLastMessage] = useState({});
   
   useEffect(() => {
-    console.log("TEST")
     const q = query(collection(db, "chats", id, "messages"), 
         orderBy("timestamp", "desc"), limit(1));
         const unsubscribe = onSnapshot(q, (querySnaphots) => {
