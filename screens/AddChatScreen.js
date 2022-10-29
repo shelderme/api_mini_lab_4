@@ -1,11 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React, { useLayoutEffect, useState } from 'react'
 import { Button, Input } from 'react-native-elements';
 import Icon from "react-native-vector-icons/FontAwesome"
-import { async } from '@firebase/util';
 import { db } from '../firebase';
 import { addDoc, collection } from 'firebase/firestore';
-import { chatsCollection } from '../utils';
 
 const AddChatScreen = ({ navigation }) => {
     const [input, setInput] = useState('');

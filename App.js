@@ -1,4 +1,3 @@
-import { StyleSheet} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native'; 
 import { createStackNavigator } from '@react-navigation/stack';
 import { ThemeProvider} from 'react-native-elements';
@@ -30,7 +29,7 @@ export default function App() {
       {/* Контейнер для организации навигации между экранами */}
       <NavigationContainer>
         <Stack.Navigator screenOptions={globalScreenOptions}>
-          {/* Экран приложения. По name осуществляется поиск, а затем переключение на соответствующий component */}
+          {/* Экраны приложения. По name осуществляется поиск, а затем переключение на соответствующий component */}
           {/* Через options можно настроить внешний вид верхней плашки. В данном случае указан заголовок экрана */}
           <Stack.Screen options={{title: "Login"}} name="Login" component={LoginScreen}/>
           <Stack.Screen options={{title: "Register"}} name="Register" component={RegisterScreen}/>

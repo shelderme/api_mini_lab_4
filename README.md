@@ -16,8 +16,16 @@
 ## Материалы
  - Официальная документация: https://reactnative.dev/docs/getting-started 
  - Nader Dabit, React Native in Action. Developing iOS and Android apps with JavaScript (2019)
- - Maximilian Schwarzmüller, React Native - The Practical Guide (https://www.oreilly.com/library/view/react-native/9781789139747/)
- - React Native Crash Course | Build a Complete App (3:24:28) - https://www.youtube.com/watch?v=VozPNrt-LfE&t=9603s 
+ - Maximilian Schwarzmüller, React Native - The Practical Guide [O'Reilly](https://www.oreilly.com/library/view/react-native/9781789139747/)
+ - React Native Crash Course | Build a Complete App (3:24:28) - [YouTube](https://www.youtube.com/watch?v=VozPNrt-LfE&t=9603s)
+
+## Настройка окружения
+Инструкция на [оф.сайте](https://reactnative.dev/docs/environment-setup)
+ - Для беспроводной отладки на физическом мобильном устройстве понадобится: Node.js + npm, Expo, приложение Expo Go на смартфоне. Мобильное устройство должно быть в той же беспроводной сети, что и ПК разработчика.
+ - Для отладки по кабелю или с помощью эмулятора понадобится:
+   - Запуск под iOS: macOS на ПК разработчика, Node.js, Watchman, Ruby, Xcode, CocoaPods
+   - Запуск под Android: Node.js + npm, Expo, JDK, Android Studio (а именно, компоненты, которые будут установлены вместе с Android Studio: ADB, Google USB Driver, Android SDK, Android SDK Platform Tools, Android Emulator). Добавить в переменные среды ANDROID_HOME (путь к Android SDK) и в path добавить путь к platform-tools.
+ - Отладка на Веб-версии: Node.js + npm, Expo, react-native-web, react-dom, @expo/webpack-config. Библиотеки можно поставить через npm expo install ...
 
 ## Настройка репозитория
 Сделайте свою приватную копию репозитория. Как это сделать, описано [тут](https://gist.github.com/0xjac/85097472043b697ab57ba1b1c7530274) или [тут](https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private). Или можно создать чистый репозиторий самостоятельно и залить код туда. Важно, чтобы он был приватным!
