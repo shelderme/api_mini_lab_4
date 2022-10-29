@@ -1,20 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native'; 
+import { createStackNavigator } from '@react-navigation/stack';
+import { ThemeProvider} from 'react-native-elements';
+import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
+import HomeScreen from './screens/HomeScreen';
+import AddChatScreen from './screens/AddChatScreen';
+import ChatScreen from './screens/ChatScreen';
+
+// Навигационный стек экранов. Позволяет упорядоченно переключатся между экранами
+const Stack = createStackNavigator();
+// Настройки заголовка (верхняя плашка, которая присутствует на всех экранах)
+const globalScreenOptions = {
+    headerStyle: {backgroundColor: "#37B34A"},
+    headerTitleStyle: { color: "white" },
+    headerTintColor: "white",
+};
+// Цветовая тема компонентов из библиотеки reac-native-elements
+const theme = {
+  colors: {
+    primary: '#37B34A',
+  }
+};
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // Обертка для доступа всех дочерних компонентов к теме приложения
+    <ThemeProvider theme={theme}>
+      {/* Контейнер для организации навигации между экранами */}
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={globalScreenOptions}>
+          {/* Экран приложения. По name осуществляется поиск, а затем переключение на соответствующий component */}
+          {/* Через options можно настроить внешний вид верхней плашки. В данном случае указан заголовок экрана */}
+          <Stack.Screen options={{title: "Login"}} name="Login" component={LoginScreen}/>
+          <Stack.Screen options={{title: "Register"}} name="Register" component={RegisterScreen}/>
+          <Stack.Screen options={{title: "Home"}} name="Home" component={HomeScreen}/>
+          <Stack.Screen options={{title: "Add Chat"}} name="AddChat" component={AddChatScreen}/>
+          <Stack.Screen options={{title: "Chat"}} name="Chat" component={ChatScreen}/>
+          </Stack.Navigator>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
